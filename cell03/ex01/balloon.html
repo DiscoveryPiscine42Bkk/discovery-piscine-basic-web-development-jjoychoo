@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Explode the Balloon</title>
+  <style>
+    #balloon {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+      border-radius: 50%;
+      margin: 100px auto;
+      transition: all 0.3s;
+    }
+  </style>
+</head>
+<body>
+
+<div id="balloon"></div>
+
+<script>
+  const balloon = document.getElementById("balloon");
+  let size = 200;
+  const maxSize = 420;
+  const minSize = 200;
+  const growStep = 10;
+  const shrinkStep = 5;
+
+  const colors = ["red", "green", "blue"];
+  let colorIndex = 0;
+
+  // คลิกเพื่อขยายและเปลี่ยนสี
+  balloon.addEventListener("click", () => {
+    size += growStep;
+    colorIndex = (colorIndex + 1) % colors.length;
+
+    if (size > maxSize) {
+      size = minSize;
+      colorIndex = 0;
+    }
+
+    balloon.style.width = size + "px";
+    balloon.style.height = size + "px";
+    balloon.style.backgroundColor = colors[colorIndex];
+  });
+
+  balloon.addEventListener("mouseleave", () => {
+    if (size > minSize) {
+      size -= shrinkStep;
+      colorIndex = (colorIndex - 1 + colors.length) % colors.length;
+    }
+
+    balloon.style.width = size + "px";
+    balloon.style.height = size + "px";
+    balloon.style.backgroundColor = colors[colorIndex];
+  });
+</script>
+
+</body>
+</html>

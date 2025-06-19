@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TO DO or not TO DO</title>
+  <script src="todo.js" defer></script>
+  <style>
+    #ft_list {
+      display: flex;
+      flex-direction: column-reverse;
+      margin-top: 20px;
+    }
+    .todo {
+      background-color: #f0f0f0;
+      padding: 10px;
+      margin: 5px 0;
+      cursor: pointer;
+      border: 1px solid #ccc;
+    }
+    button {
+      padding: 10px 15px;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <button onclick="addTodo()">New</button>
+  <div id="ft_list"></div>
+
+</body>
+</html>

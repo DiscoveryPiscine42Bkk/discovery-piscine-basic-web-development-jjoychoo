@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>It's Over 9000 Calculator</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+    input, select, button {
+      margin: 10px;
+      padding: 10px;
+      font-size: 1em;
+    }
+  </style>
+</head>
+<body>
+
+  <input type="text" id="left" placeholder="Left value" />
+  <select id="operator">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+    <option value="%">%</option>
+  </select>
+  <input type="text" id="right" placeholder="Right value" />
+  <input type="button" value="Try me!" onclick="calculate()" />
+
+  <script>
+    function isValidNumber(value) {
+      return /^\d+$/.test(value);
+    }
+
+    function calculate() {
+      const left = document.getElementById("left").value.trim();
+      const right = document.getElementById("right").value.trim();
+      const op = document.getElementById("operator").value;
+
+      if (!isValidNumber(left) || !isValidNumber(right)) {
+        alert("Error :(");
+        return;
+      }
+
+      const num1 = parseInt(left);
+      const num2 = parseInt(right);
+
+      if ((op === "/" || op === "%") && num2 === 0) {
+        alert("It's over 9000!");
+        console.log("It's over 9000!");
+        return;
+      }
+
+      let result;
+      switch (op) {
+        case "+": result = num1 + num2; break;
+        case "-": result = num1 - num2; break;
+        case "*": result = num1 * num2; break;
+        case "/": result = num1 / num2; break;
+        case "%": result = num1 % num2; break;
+      }
+
+      alert("Result: " + result);
+      console.log("Result:", result);
+    }
+    
+    setInterval(() => {
+      alert("Please, use me...");
+    }, 30000);
+  </script>
+
+</body>
+</html>
