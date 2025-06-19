@@ -15,8 +15,8 @@ The file structure for this repository is as follows:
 
 - cell0
   - ex00
-    - something
-  - ex01
+     - something
+ - ex01
     - something
   - ex02
     - something
