@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>TO DO or not TO DO</title>
-  <script src="todo.js" defer></script>
+  <title>TO DO List - jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js" defer></script>
   <style>
     #ft_list {
       display: flex;
@@ -12,6 +13,7 @@
       width: 300px;
       margin-inline: auto;
     }
+
     .todo {
       background-color: #f0f0f0;
       margin: 5px 0;
@@ -19,6 +21,7 @@
       border: 1px solid #ccc;
       cursor: pointer;
     }
+
     button {
       display: block;
       margin: 20px auto;
@@ -29,7 +32,7 @@
 </head>
 <body>
 
-  <button onclick="addTodo()">New</button>
+  <button id="new">New</button>
   <div id="ft_list"></div>
 
 </body>
