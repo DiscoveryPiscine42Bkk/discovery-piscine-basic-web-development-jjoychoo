@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      box-sizing: border-box;
+    }
+
+    table {
+      width: 100%;
+      height: 100vh;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    td {
+      text-align: center;
+      font-size: 2em;
+      font-weight: bold;
+      color: white;
+      padding: 40px;
+      word-wrap: break-word;
+    }
+
+    .cell1 {
+      background-color: #4CAF50;
+    }
+
+    .cell2 {
+      background-color: #FF6666;
+    }
+
+    @media (max-width: 600px) {
+      table, tr {
+        display: block;
+      }
+      td {
+        width: 100%;
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+  <table border="1">
+    <tr>
+      <td class="cell1">I Am jjoychoo</td>
+      <td class="cell2">I Love HTML</td>
+    </tr>
+  </table>
+</body>
+</html>
